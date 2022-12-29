@@ -20,7 +20,7 @@ body {
   position: relative;
 }
 
-a{
+a {
   text-decoration: none !important;
 }
 
@@ -50,13 +50,18 @@ a{
 
 /* ================= navbar ================ */
 .custom-navbar {
-  min-width: 140px;
+  min-height: 140px;
 }
 
 .navbar-nav {
   align-items: center;
-  justify-content: center;
+  justify-content: end;
   width: 100%;
+}
+
+.navbar-collapse {
+  width: 100% !important;
+  margin-right: 1rem;
 }
 
 .nav-link {
@@ -68,13 +73,11 @@ a{
 }
 
 .navbar-dark .navbar-brand {
-  width: 100%;
   color: #fa0034 !important;
 }
 .navbar-brand .brand-img {
-  width: 110px;
+  width: 80px;
   display: inline-block;
-  margin: auto;
   opacity: 1;
   visibility: visible;
   transition: all 0.2s linear 0s;
@@ -84,7 +87,7 @@ a{
 .navbar-brand .brand-txt {
   position: absolute;
   bottom: 0;
-  left: 50%;
+  left: 10%;
   transform: translate(-50%, 50%);
   font-weight: 700;
   font-size: 2rem;
@@ -108,9 +111,10 @@ a{
   opacity: 1;
   visibility: visible;
   bottom: 50%;
+  left: 12%;
 }
 
-.nav-pills .nav-link.active {
+.active-link {
   background-color: transparent !important;
   color: #ff214f !important;
 }
@@ -140,28 +144,28 @@ a{
 }
 
 /* ================ gallary section ================ */
-.gallary-tittle-ht{
+.gallary-tittle-ht {
   min-height: 300px;
 }
-.gallary-tittle-ht .gallary-tittle{
+.section-tittle {
   font-size: 4rem;
 }
 
-.gallary{
+.gallary {
   margin: 0 !important;
 }
 
-.gallary-item{
+.gallary-item {
   padding: 0 !important;
   border: 1px solid #343a40;
   position: relative;
 }
-.gallary-item img{
+.gallary-item img {
   width: 100%;
   border-radius: 4px;
 }
 
-.gallary-item .gallary-overlay{
+.gallary-item .gallary-overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -172,14 +176,100 @@ a{
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all .3s linear 0s;
+  transition: all 0.3s linear 0s;
 }
-.gallary-item .gallary-overlay:hover{
+.gallary-item .gallary-overlay:hover {
   opacity: 1;
 }
-.gallary-item .gallary-overlay i{
+.gallary-item .gallary-overlay i {
   font-size: 4rem;
   color: #fff;
 }
 
-/* ================ about section ================ */
+/* ================ reviews section ================ */
+#reviews {
+  margin-top: 5rem;
+  min-height: 600px;
+}
+
+#reviews .section-tittle {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.review-card {
+  position: relative;
+}
+
+.review-title {
+  font-size: 1.85rem;
+}
+.review-subtitle {
+  font-family: sans-serif !important;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.review-body {
+  position: relative;
+  padding: 1rem;
+  margin-top: 2rem;
+  border: 2px solid #495057;
+  border-top-color: #fa0034;
+  border-radius: 0.2rem;
+}
+.review-body::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  width: 24px;
+  height: 24px;
+  background: #343a40;
+  border-color: #fa0034;
+  border-style: solid;
+  border-width: 2px 0 0 2px;
+  border-radius: 0.2rem 0 0 0;
+  transform: rotate(45deg) translateY(-50%);
+}
+/* ================ contact section ================ */
+#contact {
+  margin-top: 10rem;
+  border: 2px solid #495057;
+}
+
+#googleMaps {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+.contact-info {
+  min-height: 500px;
+}
+
+/* ================== small screen =============== */
+@media (max-width: 990px) {
+  /* =========== navbar =========== */
+  #nav-header .navbar-brand{
+    display: none !important;
+  }
+  .navbar-toggler{
+    margin: .5rem 0 0 1rem;
+  }
+
+  .navbar-collapse{
+    margin-right: 0;
+  }
+  .navbar-nav{
+    flex-direction: row !important;
+    justify-content: space-around;
+  }
+
+  .custom-navbar{
+    min-height: 80px;
+  }
+}
